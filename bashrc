@@ -80,6 +80,7 @@ for config in "$HOME"/.bashrc.d/*.bash ; do
 done
 unset -v config
 
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).

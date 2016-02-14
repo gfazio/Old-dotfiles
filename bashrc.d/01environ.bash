@@ -54,12 +54,13 @@ export WEBOS_TOOLS=$COMP/Palm/webos/Homebrew/Tools
 #
 ###############################################################################
 
+export EDITOR=vim
 export PATH=$PATH:/opt/local/bin:/opt/local/sbin
 export PATH=$PATH:/opt/PalmSDK/Current/bin:/opt/PalmPDK/bin/
 export PATH=$PATH:$ASTRO:$ASTROX:$ASTROX/DS9
 export PYTHONPATH=$PYTHONPATH:$ASTROPY/astrolib/astrolib_installed/lib/python
 export VLC_PLUGIN_PATH=/Applications/VLC.app/Contents/MacOS/plugins
-
+export PATH=$PATH:/Applications/calibre.app/Contents/MacOS/
 ###############################################################################
 #
 # History control

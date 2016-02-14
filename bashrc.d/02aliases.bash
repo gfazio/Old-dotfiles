@@ -6,6 +6,18 @@
 
 ###############################################################################
 #
+# ITunesHelper removal. This will allow you to disable or enable iTunes from 
+# listening when you press the media keys or connect via bluetooth, even if 
+# iTunes is not installed. It doesn't actually remove iTunesHelper, but prevents
+# rcd demaon from launching.
+#
+###############################################################################
+
+alias rcdoff='launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist'
+alias rcdon='launchctl load -w /System/Library/LaunchAgents/com.apple.rcd.plist'
+
+###############################################################################
+#
 # IPlayer 
 #
 ###############################################################################
@@ -49,6 +61,8 @@ fi
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias bye="logout"
 alias blessme="sudo bless --setBoot --folder /EFI/EFI/refind --file /EFI/EFI/refind/refind_x64.efi"
+alias chimeoff="sudo nvram SystemAudioVolume=%80"
+alias chimeon="sudo nvram -d SystemAudioVolume"
 alias cls="clear"
 alias deprot="chmod og+rx"
 alias df="df -h"
@@ -57,6 +71,7 @@ alias du="du -h"
 alias efi="sudo mount -t msdos /dev/disk0s1 /EFI"
 alias fixeclipse="rm -f /Users/vgg/Computing/Development/Workspace/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi"
 alias galias="vim /Users/vgg/.bashrc.d/02aliases.bash" 
+alias gonotts="ssh $GPUServer"
 alias gunzip="gzip -d"
 alias hkp0="ssh 192.168.0.200"
 alias phkp0="ping 192.168.0.200"
@@ -77,7 +92,8 @@ alias prot="chmod og-rx"
 alias pre2="novacom -d roadrunner-linux -t open tty://"
 alias pre3="novacom -d mantaray-linux -t open tty://"
 alias touchpad="novacom -d topaz-linux -t open tty://"
-alias ralias=". /Users/vgg/.bashrc.d/02aliases.bash; . /Users/vgg/.bashrc.d/01environ.bash"
+alias ralias=". /Users/vgg/.bashrc.d/01environ.bash ; . /Users/vgg/.bashrc.d/02aliases.bash"
+alias refind-fix=". /Users/vgg/bin/refind-fix.sh"
 alias rm="rm -f"    
 alias uefi="sudo diskutil unmount /EFI"
 alias vlc="/Applications/VLC.app/Contents/MacOS/vlc"
